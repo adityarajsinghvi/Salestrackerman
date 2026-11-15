@@ -1,0 +1,51 @@
+:root{--bg:#f6f5f1;--card:#fff;--ink:#1d1d1b;--mute:#6b6b66;--line:#e4e2da;--accent:#1f6f5c;--accent-ink:#fff;--danger:#b3261e;--tile:#e8f3ef}
+@media (prefers-color-scheme:dark){:root{--bg:#161614;--card:#22221f;--ink:#f1efe8;--mute:#9b9a92;--line:#34332f;--accent:#4cc3a3;--accent-ink:#0b1f19;--danger:#ff8a80;--tile:#1c3a32}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;-webkit-tap-highlight-color:transparent}
+.wrap{max-width:900px;margin:0 auto;padding:16px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+h1{font-size:20px;margin:0}h2{font-size:16px;margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:16px}
+label{display:block;font-size:13px;color:var(--mute);margin-bottom:4px}
+input,select{font:inherit;padding:10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+button{font:inherit;cursor:pointer}
+.btn{padding:10px 14px;border-radius:8px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);font-weight:600;width:100%}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line);font-weight:400}
+.btn.sm{width:auto;padding:6px 10px;font-size:14px}
+.link{background:none;border:none;color:var(--danger);padding:4px 8px}
+nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+nav button{border:1px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:999px}
+nav button.on{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));align-items:end}
+.login{max-width:360px;margin:12vh auto 0}
+.err{color:var(--danger);min-height:1.3em;margin:8px 0 0;font-size:14px}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:8px 6px;border-bottom:1px solid var(--line);font-size:15px}
+th{font-size:12px;color:var(--mute);text-transform:uppercase;letter-spacing:.04em}
+.n{text-align:right;font-variant-numeric:tabular-nums}
+.scroll{overflow-x:auto}
+.pts{font-weight:700;color:var(--accent)}
+.big{font-size:56px;font-weight:800;color:var(--accent);line-height:1}
+.stats{display:flex;gap:24px;flex-wrap:wrap;align-items:flex-end}
+.stat span{display:block;font-size:13px;color:var(--mute)}.stat b{font-size:26px}
+.empty,.mute{color:var(--mute)}
+.center{text-align:center;margin-top:30vh}
+/* one-tap entry */
+.men{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(130px,1fr))}
+.man{padding:12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);text-align:left}
+.man.on{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.man b{display:block}.man span{font-size:13px;color:var(--mute)}
+.tiles{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(140px,1fr))}
+.tile{position:relative;border:1px solid var(--line);background:var(--tile);border-radius:14px;min-height:110px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;user-select:none;touch-action:manipulation}
+.tile:active{transform:scale(.97)}
+.tile .name{font-size:18px;font-weight:700}
+.tile .pp{font-size:13px;color:var(--mute)}
+.tile .cnt{font-size:34px;font-weight:800;color:var(--accent);line-height:1}
+.tile .minus{position:absolute;top:8px;right:8px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:22px;line-height:1}
+.tile .minus[disabled]{opacity:.3}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;opacity:0;transition:.2s;pointer-events:none;max-width:90vw}
+.toast.show{opacity:1}
+.row{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+.row input{flex:1;min-width:110px}.row input.sm{flex:0 0 90px;min-width:0}
+.badge{font-size:12px;border:1px solid var(--line);border-radius:999px;padding:1px 8px;color:var(--mute)}
+[hidden]{display:none!important}
