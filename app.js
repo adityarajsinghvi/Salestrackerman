@@ -56,7 +56,12 @@ function renderLogin(msg = '') {
     const btn = e.target.querySelector('button'); btn.disabled = true;
     const u = document.getElementById('u').value.trim().toLowerCase();
     const { error } = await sb.auth.signInWithPassword({ email: `${u}@${C.EMAIL_DOMAIN}`, password: document.getElementById('p').value });
-    if (error) { document.getElementById('loginErr').textContent = 'Wrong username or password'; btn.disabled = false; return; }
+    if (error) {
+      // 4xx = bad credentials; anything else (e.g. no internet) must not be reported as a wrong password
+      const bad = error.status >= 400 && error.status < 500;
+      document.getElementById('loginErr').textContent = bad ? 'Wrong username or password' : 'Could not connect. Check your internet and try again.';
+      btn.disabled = false; return;
+    }
     start();
   };
 }
